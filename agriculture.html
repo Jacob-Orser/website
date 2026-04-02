@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture — Orser Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="_shared.css">
+    <style>
+    .theme-nav { background: var(--paper-dark); border-bottom: 1px solid var(--rule); }
+    .theme-nav-inner { max-width: var(--col-wide); margin: 0 auto; padding: 10px 40px; display: flex; gap: 0; align-items: center; flex-wrap: wrap; }
+    .theme-nav-label { font-family: var(--mono); font-size: 0.56rem; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-right: 20px; }
+    .theme-nav-link { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; padding: 6px 16px; border-left: 1px solid var(--rule); transition: color 0.15s; }
+    .theme-nav-link:first-of-type { border-left: none; }
+    .theme-nav-link:hover { color: var(--ink); }
+    .theme-nav-link.current { color: var(--accent); }
+    @media (max-width: 600px) { .theme-nav-inner, .section { padding-left: 20px; padding-right: 20px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <a href="index.html" class="logo">Orser Consulting</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="theme-nav">
+    <div class="theme-nav-inner">
+        <a href="conservation.html" class="theme-nav-link">Conservation</a>
+        <a href="agriculture.html" class="theme-nav-link current">Agriculture</a>
+        <a href="landuse.html" class="theme-nav-link">Land Use & Change</a>
+    </div>
+</div>
+
+<main>
+    <div class="page-hero">
+        <div class="page-hero-fallback" style="background:#1a1a0a;"></div>
+        <video autoplay muted loop playsinline>
+            <source src="ag.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title"><em>Agriculture</em></h1>
+            <p class="page-hero-desc">Flood damage assessment, crop stress detection, yield prediction, and field monitoring — from 48-hour disaster response to season-long precision agriculture analysis.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="proj-accordion">
+
+            <!-- 05 Hyperspectral -->
+            <div class="proj-item" id="hyperspectral">
+                <button class="proj-trigger" onclick="toggle(this)">
+                    <span class="proj-t-n">01</span>
+                    <div>
+                        <div class="proj-t-title">Hyperspectral Sensor Intercomparison — Vineyard Stress Monitoring</div>
+                        <p class="proj-t-result">Pearson r &gt; 0.99 across 13 fields — <strong>commercial satellite validated as viable alternative for plant stress detection.</strong></p>
+                        <span class="proj-t-loc">Finger Lakes, NY · 2025</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- 06 Yield Prediction -->
+            <div class="proj-item" id="yield">
+                <button class="proj-trigger" onclick="toggle(this)">
+                    <span class="proj-t-n">02</span>
+                    <div>
+                        <div class="proj-t-title">Sub-Field Yield Prediction Model</div>
+                        <p class="proj-t-result">Early-season EVI identified as <strong>dominant predictor at sub-field resolution using Random Forest regression.</strong></p>
+                        <span class="proj-t-loc">Midwest, USA</span>
+                    </div>
+                </button>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cta-strip">
+        <h2>Working on an agricultural project?<br><em>Get in touch.</em></h2>
+        <a href="about.html" class="btn btn-primary">Contact</a>
+    </div>
+</main>
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="logo">Orser Consulting</a>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Orser Consulting</span>
+    </div>
+</footer>
+<script>
+function toggle(btn) {
+    const item = btn.closest('.proj-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.proj-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+}
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const el = document.querySelector(hash);
+    if (!el) return;
+    if (el.classList.contains('proj-item')) el.classList.add('open');
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Orser Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .hub-intro { max-width: var(--col-wide); margin: 0 auto; padding: 64px 40px 0px; border-bottom: 1px solid var(--rule); }
+    .hub-intro h1 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; 
+        letter-spacing: -0.015em; line-height: 1.1; margin-bottom: 14px; }
+    .hub-intro p { font-size: 0.97rem; color: var(--ink-mid); line-height: 1.75; max-width: 560px; }
+
+    .theme-cards { max-width: var(--col-wide); margin: 0 auto; padding: 56px 40px 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 0; }
+    /* override padding for full stretch */
+    .theme-cards { margin-left: auto; margin-right: auto; }
+
+    .theme-card {
+        background: var(--paper); text-decoration: none; color: inherit;
+        display: flex; flex-direction: column;
+        transition: background 0.18s;
+        overflow: hidden;
+    }
+    .theme-card:hover { background: var(--paper-dark); }
+    .theme-card-video {
+        position: relative; height: 220px; overflow: hidden; background: #111;
+    }
+    .theme-card-video video {
+        width: 100%; height: 100%; object-fit: cover;
+        filter: brightness(0.45) saturate(0.65);
+        transition: filter 0.3s;
+    }
+    .theme-card:hover .theme-card-video video { filter: brightness(0.55) saturate(0.75); }
+    .theme-card-video-fallback { width: 100%; height: 100%; }
+    .theme-card-overlay {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        background: linear-gradient(transparent, rgba(255, 255, 255, 0.5));
+        padding: 28px 22px 14px;
+    }
+    .theme-card-n { font-family: var(--mono); font-size: 0.55rem; color: rgba(240,236,226,0.5); letter-spacing: 0.12em; display: block; margin-bottom: 4px; }
+    .theme-card-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: #f0ece2; line-height: 1.15; }
+    .theme-card-title em { font-style: italic; color: #ffffff; }
+    .theme-card-body { padding: 22px 22px 28px; flex: 1; display: flex; flex-direction: column; }
+    .theme-card-desc { font-size: 0.86rem; color: var(--ink-mid); line-height: 1.68; margin-bottom: 16px; flex: 1; }
+    .theme-card-count { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-faint); letter-spacing: 0.06em; margin-bottom: 14px; }
+    .theme-card-link { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-top: auto; }
+
+    /* wrap the cards section properly */
+    .cards-wrap { max-width: var(--col-wide); margin: 0 auto;}
+
+    @media (max-width: 860px) { .theme-cards { grid-template-columns: 1fr; } .theme-card-video { height: 180px; } }
+    @media (max-width: 600px) { .hub-intro, .cards-wrap { padding-left: 20px; padding-right: 20px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <a href="index.html" class="logo">Orser Consulting</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="about.html">Contact</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="hub-intro">
+        <h1>Projects</h1>
+        <p style="margin-top: 14px; padding-bottom: 32px;">Work organized by domain. Each section covers the full workflow — from raw satellite archive through to delivered maps, tools, and analysis ready for decision-making.</p>
+    </div>
+    <div class="cards-wrap">
+        <div class="theme-cards">
+            <a href="conservation.html" class="theme-card">
+                <div class="theme-card-video">
+                    <div class="theme-card-video-fallback" style="background:#0d1f12;"></div>
+                    <video autoplay muted loop playsinline style="position:absolute;inset:0;">
+                        <source src="conservation.mp4" type="video/mp4">
+                    </video>
+                    <div class="theme-card-overlay">
+                        <span class="theme-card-n">Theme 01</span>
+                        <div class="theme-card-title">Conservation</div>
+                    </div>
+                </div>
+                <div class="theme-card-body">
+                    <p class="theme-card-desc">Easement targeting, habitat monitoring, riparian change detection, and tools for field staff — satellite evidence that gets conservationists to the right parcels without driving every road first.</p>
+                    <span class="theme-card-link">View conservation work →</span>
+                </div>
+            </a>
+
+            <a href="agriculture.html" class="theme-card">
+                <div class="theme-card-video">
+                    <div class="theme-card-video-fallback" style="background:#1a1a0a;"></div>
+                    <video autoplay muted loop playsinline style="position:absolute;inset:0;">
+                        <source src="ag.mp4" type="video/mp4">
+                    </video>
+                    <div class="theme-card-overlay">
+                        <span class="theme-card-n">Theme 02</span>
+                        <div class="theme-card-title"><em>Agriculture</em></div>
+                    </div>
+                </div>
+                <div class="theme-card-body">
+                    <p class="theme-card-desc">Flood damage assessment, crop stress detection, yield prediction, and field monitoring — from 48-hour disaster response to season-long precision agriculture analysis.</p>
+                    <span class="theme-card-link">View agriculture work →</span>
+                </div>
+            </a>
+
+            <a href="landuse.html" class="theme-card">
+                <div class="theme-card-video">
+                    <div class="theme-card-video-fallback" style="background:#0a0f1a;"></div>
+                    <video autoplay muted loop playsinline style="position:absolute;inset:0;">
+                        <source src="landuse.mp4" type="video/mp4">
+                    </video>
+                    <div class="theme-card-overlay">
+                        <span class="theme-card-n">Theme 03</span>
+                        <div class="theme-card-title">Land Use &amp; Land Change</div>
+                    </div>
+                </div>
+                <div class="theme-card-body">
+                    <p class="theme-card-desc">Long-term sensor harmonization, corridor vegetation disturbance, spatial statistics on federal land data, and enterprise GIS infrastructure for statewide management.</p>
+                    <span class="theme-card-link">View land use work →</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-inner">
+        <a href="index.html" class="logo">Orser Consulting</a>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">Contact</a>
+        </nav>
+        <span class="footer-copy">&copy; 2026 Orser Consulting</span>
+    </div>
+</footer>
+</body>
+</html>
